@@ -269,4 +269,817 @@
                             <table class="w-full text-left">
                                 <thead class="bg-gray-50">
                                     <tr>
-                                        <th class
+                                        <th class="p-4 font-semibold">Course Code</th>
+                                        <th class="p-4 font-semibold">Course Name</th>
+                                        <th class="p-4 font-semibold hidden sm:table-cell">Credits</th>
+                                        <th class="p-4 font-semibold">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b"><td class="p-4">BT101</td><td class="p-4">Intro to Biology</td><td class="p-4 hidden sm:table-cell">3</td><td class="p-4"><button class="text-blue-600 hover:text-blue-800 mr-3"><i class="fas fa-edit"></i></button><button class="text-red-600 hover:text-red-800"><i class="fas fa-trash"></i></button></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="studentDashboardView" class="hidden fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-md flex items-center space-x-4 transition-all duration-300 card-hover">
+                        <div class="bg-green-100 p-3 rounded-full"><i class="fas fa-user-check text-green-600 text-2xl"></i></div>
+                        <div><p class="text-gray-500">Overall Attendance</p><p class="text-2xl font-bold">85%</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md flex items-center space-x-4 transition-all duration-300 card-hover">
+                        <div class="bg-blue-100 p-3 rounded-full"><i class="fas fa-chalkboard-teacher text-blue-600 text-2xl"></i></div>
+                        <div><p class="text-gray-500">Next Class</p><p class="text-xl font-bold">AI & ML</p><p class="text-sm text-gray-400">11:00 AM - LT-3</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md flex items-center space-x-4 transition-all duration-300 card-hover">
+                        <div class="bg-yellow-100 p-3 rounded-full"><i class="fas fa-tasks text-yellow-600 text-2xl"></i></div>
+                        <div><p class="text-gray-500">Pending Tasks</p><p class="text-2xl font-bold">3</p></div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md flex items-center space-x-4 transition-all duration-300 card-hover">
+                        <div class="bg-purple-100 p-3 rounded-full"><i class="fas fa-lightbulb text-purple-600 text-2xl"></i></div>
+                        <div><p class="text-gray-500">Suggested Activity</p><p class="text-md font-bold">Read a research paper</p></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow-md">
+                        <h2 class="text-2xl font-bold mb-4">Today's Schedule</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center p-4 rounded-lg bg-gray-50 border-l-4 border-blue-500">
+                                <span class="font-semibold w-24">10-11 AM</span><span>Data Structures</span><span class="ml-auto text-gray-500">LT-2</span>
+                            </div>
+                            <div class="flex items-center p-4 rounded-lg bg-gray-50 border-l-4 border-green-500">
+                                <span class="font-semibold w-24">11-12 PM</span><span>Free Slot</span><span class="ml-auto text-green-500 font-semibold">Growth Time!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md">
+                        <h2 class="text-2xl font-bold mb-4">Your Growth Hub</h2>
+                        <div class="space-y-3">
+                           <div class="p-4 bg-purple-50 rounded-lg flex items-start space-x-3">
+                                <i class="fas fa-book-open text-purple-500 mt-1"></i>
+                                <div><h3 class="font-semibold">Project Work</h3><p class="text-sm text-gray-600">Utilize your free slot for the DBMS project.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="facultyDashboardView" class="hidden fade-in">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 space-y-4 sm:space-y-0">
+                    <h1 class="text-3xl font-bold">Faculty Dashboard</h1>
+                    <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
+                        <select id="classSelect" class="p-2 border rounded-md">
+                            <option>AI & Machine Learning (10 AM)</option>
+                            <option>Data Structures (11 AM)</option>
+                        </select>
+                        <button id="generateQRBtn" class="bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-700 transition"><i class="fas fa-qrcode mr-2"></i>Generate QR</button>
+                        <button class="gradient-bg text-white px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition"><i class="fas fa-video mr-2"></i>Start Class</button>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-md">
+                    <h2 class="text-2xl font-bold mb-4">Live Classroom Attendance</h2>
+                    <p class="text-gray-500 mb-6">Real-time attendance for AI & Machine Learning. (18/20 Present)</p>
+                    <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4 text-center">
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/60x60/22c55e/ffffff?text=S1" class="rounded-full ring-2 ring-green-500"><span class="text-xs mt-1">S1</span></div>
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/60x60/22c55e/ffffff?text=S2" class="rounded-full ring-2 ring-green-500"><span class="text-xs mt-1">S2</span></div>
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/60x60/ef4444/ffffff?text=S3" class="rounded-full ring-2 ring-red-500"><span class="text-xs mt-1">S3</span></div>
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/60x60/22c55e/ffffff?text=S4" class="rounded-full ring-2 ring-green-500"><span class="text-xs mt-1">S4</span></div>
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/60x60/22c55e/ffffff?text=S5" class="rounded-full ring-2 ring-green-500"><span class="text-xs mt-1">S5</span></div>
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/60x60/22c55e/ffffff?text=S6" class="rounded-full ring-2 ring-green-500"><span class="text-xs mt-1">S6</span></div>
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/60x60/22c55e/ffffff?text=S7" class="rounded-full ring-2 ring-green-500"><span class="text-xs mt-1">S7</span></div>
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/60x60/22c55e/ffffff?text=S8" class="rounded-full ring-2 ring-green-500"><span class="text-xs mt-1">S8</span></div>
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/60x60/22c55e/ffffff?text=S9" class="rounded-full ring-2 ring-green-500"><span class="text-xs mt-1">S9</span></div>
+                        <div class="flex flex-col items-center"><img src="https://placehold.co/60x60/22c55e/ffffff?text=S10" class="rounded-full ring-2 ring-green-500"><span class="text-xs mt-1">S10</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="attendanceView" class="hidden fade-in">
+                 <div id="studentAttendanceView">
+                    <div class="bg-white p-8 rounded-2xl shadow-md">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-3xl font-bold">Attendance Record</h2>
+                            <button id="markAttendanceBtn" class="gradient-bg text-white px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition">Mark Today's Attendance</button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50">
+                                    <tr><th class="p-4 font-semibold">Course</th><th class="p-4 font-semibold">Attended</th><th class="p-4 font-semibold">Total</th><th class="p-4 font-semibold">Percentage</th><th class="p-4 font-semibold">Status</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b"><td class="p-4">AI & ML</td><td class="p-4">18</td><td class="p-4">20</td><td class="p-4">90%</td><td class="p-4"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Safe</span></td></tr>
+                                    <tr class="border-b"><td class="p-4">Data Structures</td><td class="p-4">22</td><td class="p-4">25</td><td class="p-4">88%</td><td class="p-4"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Safe</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                 <div id="facultyRecordsView" class="hidden">
+                     <div class="bg-white p-8 rounded-2xl shadow-md">
+                        <h2 class="text-3xl font-bold mb-6">Attendance Records Summary</h2>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="p-4 font-semibold">Date</th>
+                                        <th class="p-4 font-semibold">Class</th>
+                                        <th class="p-4 font-semibold">Attendance</th>
+                                        <th class="p-4 font-semibold">Percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b">
+                                        <td class="p-4">2025-09-18</td>
+                                        <td class="p-4">AI & Machine Learning</td>
+                                        <td class="p-4">18 / 20</td>
+                                        <td class="p-4"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">90%</span></td>
+                                    </tr>
+                                     <tr class="border-b">
+                                        <td class="p-4">2025-09-17</td>
+                                        <td class="p-4">AI & Machine Learning</td>
+                                        <td class="p-4">19 / 20</td>
+                                        <td class="p-4"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">95%</span></td>
+                                    </tr>
+                                    <tr class="border-b">
+                                        <td class="p-4">2025-09-17</td>
+                                        <td class="p-4">Data Structures</td>
+                                        <td class="p-4">24 / 25</td>
+                                        <td class="p-4"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">96%</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                     </div>
+                 </div>
+            </div>
+
+            <div id="plannerView" class="hidden fade-in">
+                <div class="bg-white p-8 rounded-2xl shadow-md">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-3xl font-bold">My Routine Planner</h2>
+                        <button id="addEventBtn" class="gradient-bg text-white px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition"><i class="fas fa-plus mr-2"></i>Add Goal/Event</button>
+                    </div>
+                    <div class="grid grid-cols-7 text-center font-semibold text-gray-600">
+                        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                    </div>
+                    <div id="calendar" class="grid grid-cols-7 gap-2 mt-2"></div>
+                </div>
+            </div>
+            
+            <div id="editAttendanceView" class="hidden fade-in">
+                <div class="bg-white p-8 rounded-2xl shadow-md">
+                    <h2 class="text-3xl font-bold mb-6">Edit Attendance Records</h2>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-6 pb-6 border-b">
+                        <div class="flex-1">
+                            <label for="facultyClassSelect" class="block text-sm font-medium text-gray-700">Select Class</label>
+                            <select id="facultyClassSelect" class="mt-1 block w-full p-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <option>AI & Machine Learning</option>
+                                <option>Data Structures</option>
+                            </select>
+                        </div>
+                         <div class="flex-1">
+                            <label for="attendanceDateSelect" class="block text-sm font-medium text-gray-700">Select Date</label>
+                            <input type="date" id="attendanceDateSelect" value="2025-09-18" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        </div>
+                        <div class="self-end">
+                           <button id="loadRecordsBtn" class="w-full sm:w-auto bg-gray-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-700 transition">Load Records</button>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="p-4 font-semibold">Student Name</th>
+                                    <th class="p-4 font-semibold hidden sm:table-cell">Student ID</th>
+                                    <th class="p-4 font-semibold">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="attendanceStudentListBody">
+                                <tr class="border-b">
+                                    <td class="p-4">Alex Johnson</td>
+                                    <td class="p-4 hidden sm:table-cell">STU1001</td>
+                                    <td class="p-4">
+                                        <label class="inline-flex items-center space-x-3 cursor-pointer">
+                                            <input type="checkbox" class="attendance-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" checked>
+                                            <span class="status-text font-medium"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-4">Maria Garcia</td>
+                                    <td class="p-4 hidden sm:table-cell">STU1002</td>
+                                    <td class="p-4">
+                                        <label class="inline-flex items-center space-x-3 cursor-pointer">
+                                            <input type="checkbox" class="attendance-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
+                                            <span class="status-text font-medium"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                 <tr class="border-b">
+                                    <td class="p-4">David Smith</td>
+                                    <td class="p-4 hidden sm:table-cell">STU1003</td>
+                                    <td class="p-4">
+                                         <label class="inline-flex items-center space-x-3 cursor-pointer">
+                                            <input type="checkbox" class="attendance-checkbox h-5 w-5 rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" checked>
+                                            <span class="status-text font-medium"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-6 text-right">
+                        <button id="saveAttendanceChangesBtn" class="gradient-bg text-white px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition">
+                            <i class="fas fa-save mr-2"></i>Save Changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <div id="attendanceModal" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md text-center fade-in">
+            <h2 class="text-2xl font-bold mb-4">Mark Attendance</h2>
+            <div class="border-b mb-4">
+
+                <nav class="-mb-px flex justify-center space-x-8" aria-label="Tabs">
+                    <button class="tab-btn active whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" data-tab="qr">QR Code</button>
+                    <button class="tab-btn text-gray-500 whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-sm" data-tab="proximity">Proximity</button>
+                </nav>
+            </div>
+            <div id="tab-content-qr"><i class="fas fa-qrcode text-9xl text-gray-400"></i></div>
+            <div id="tab-content-proximity" class="hidden"><i class="fab fa-bluetooth-b text-9xl text-gray-400"></i></div>
+            <div id="tab-content-face" class="hidden"><i class="fas fa-camera-retro text-9xl text-gray-400"></i></div>
+            <p id="attendanceStatus" class="my-4 text-gray-600">Scan QR for <span class="font-bold">AI & ML</span>.</p>
+            <button id="closeAttendanceModal" class="mt-4 bg-gray-200 text-gray-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-300">Close</button>
+        </div>
+    </div>
+    
+    <div id="eventModal" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md fade-in">
+            <h2 class="text-2xl font-bold mb-6">Add New Goal or Event</h2>
+            <form>
+                <input type="text" placeholder="Title" class="w-full p-3 border rounded-lg mb-4">
+                <select class="w-full p-3 border rounded-lg mb-4"><option>Academic</option><option>Personal Growth</option></select>
+                <div class="flex justify-end space-x-4 mt-2">
+                    <button type="button" id="closeEventModal" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg">Cancel</button>
+                    <button type="submit" id="saveEventBtn" class="gradient-bg text-white px-6 py-2 rounded-lg">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="qrCodeModal" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-sm text-center fade-in">
+            <h2 class="text-2xl font-bold mb-4">Scan for Attendance</h2>
+            <p class="text-gray-600 mb-4">Students can scan this code to mark their attendance for <span id="qrClassInfo" class="font-bold"></span>.</p>
+            <div id="qrcode" class="flex justify-center items-center my-6"></div>
+            <p class="text-xs text-gray-400">This code is valid for 60 seconds.</p>
+            <button id="closeQRModal" class="mt-6 bg-gray-200 text-gray-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-300">Close</button>
+        </div>
+    </div>
+    
+    <div id="userModal" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md fade-in">
+            <h2 id="userModalTitle" class="text-2xl font-bold mb-6">Add New Student</h2>
+            <form id="userForm">
+                 <div class="space-y-4">
+                    <div>
+                        <label for="userNameInput" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="userNameInput" placeholder="e.g., Alex Johnson" class="mt-1 w-full p-3 border rounded-lg">
+                    </div>
+                     <div>
+                        <label for="userIdInput" class="block text-sm font-medium text-gray-700">User ID</label>
+                        <input type="text" id="userIdInput" placeholder="e.g., STU1001" class="mt-1 w-full p-3 border rounded-lg">
+                    </div>
+                     <div>
+                        <label for="userDeptInput" class="block text-sm font-medium text-gray-700">Department / Program</label>
+                         <select id="userDeptInput" class="mt-1 w-full p-3 border rounded-lg bg-white">
+                             <option>Computer Science</option>
+                             <option>Biotechnology</option>
+                             <option>Mechanical Eng.</option>
+                             <option>Electronics</option>
+                         </select>
+                    </div>
+                </div>
+                <div class="flex justify-end space-x-4 mt-8">
+                    <button type="button" id="closeUserModal" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg">Cancel</button>
+                    <button type="submit" id="saveUserBtn" class="gradient-bg text-white px-6 py-2 rounded-lg">Save User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="courseModal" class="modal fixed inset-0 bg-black bg-opacity-60 items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl shadow-lg p-8 w-full max-w-md fade-in">
+            <h2 id="courseModalTitle" class="text-2xl font-bold mb-6">Add New Course</h2>
+            <form id="courseForm">
+                 <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Department</label>
+                        <input type="text" id="courseDeptInput" class="mt-1 w-full p-3 border rounded-lg bg-gray-100" readonly>
+                    </div>
+                    <div>
+                        <label for="courseNameInput" class="block text-sm font-medium text-gray-700">Course Name</label>
+                        <input type="text" id="courseNameInput" placeholder="e.g., Intro to Programming" class="mt-1 w-full p-3 border rounded-lg">
+                    </div>
+                     <div>
+                        <label for="courseCodeInput" class="block text-sm font-medium text-gray-700">Course Code</label>
+                        <input type="text" id="courseCodeInput" placeholder="e.g., CS101" class="mt-1 w-full p-3 border rounded-lg">
+                    </div>
+                     <div>
+                        <label for="courseCreditsInput" class="block text-sm font-medium text-gray-700">Credits</label>
+                         <input type="number" id="courseCreditsInput" placeholder="e.g., 4" class="mt-1 w-full p-3 border rounded-lg">
+                    </div>
+                </div>
+                <div class="flex justify-end space-x-4 mt-8">
+                    <button type="button" id="closeCourseModal" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg">Cancel</button>
+                    <button type="submit" id="saveCourseBtn" class="gradient-bg text-white px-6 py-2 rounded-lg">Save Course</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Elements ---
+        const loginScreen = document.getElementById('loginScreen');
+        const adminLoginScreen = document.getElementById('adminLoginScreen');
+        const app = document.getElementById('app');
+        const loginStudentBtn = document.getElementById('loginStudent');
+        const loginFacultyBtn = document.getElementById('loginFaculty');
+        const loginAdminBtn = document.getElementById('loginAdmin');
+        const adminRoleBtns = document.querySelectorAll('.admin-role-btn');
+        const backToLoginBtn = document.getElementById('backToLogin');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const userName = document.getElementById('userName');
+        
+        const allViews = document.querySelectorAll('#app main > div');
+        const modals = {
+            attendance: document.getElementById('attendanceModal'),
+            event: document.getElementById('eventModal'),
+            qrCode: document.getElementById('qrCodeModal'),
+            user: document.getElementById('userModal'),
+            course: document.getElementById('courseModal') // New course modal
+        };
+
+        // --- State ---
+        let currentUserRole = null;
+        let attendanceChartInstance = null;
+        let activeUserManagementTab = 'student';
+        let activeCourseDept = 'cs'; // New state for course management
+
+        // --- Functions ---
+        const setupUIForRole = (role) => {
+            currentUserRole = role;
+            loginScreen.classList.add('hidden');
+            adminLoginScreen.classList.add('hidden');
+            app.classList.add('flex');
+            app.classList.remove('hidden');
+            
+            let defaultViewId;
+
+            const studentAttendanceView = document.getElementById('studentAttendanceView');
+            const facultyRecordsView = document.getElementById('facultyRecordsView');
+
+            if (role === 'student') {
+                userName.textContent = 'Welcome, Alex!';
+                const navs = [
+                    { id: 'studentDashboardBtn', text: 'Dashboard', view: 'studentDashboardView' },
+                    { id: 'attendanceBtn', text: 'Attendance', view: 'attendanceView' },
+                    { id: 'plannerBtn', text: 'Planner', view: 'plannerView' }
+                ];
+                defaultViewId = 'studentDashboardView';
+                createNavButtons(navs);
+                studentAttendanceView.classList.remove('hidden');
+                facultyRecordsView.classList.add('hidden');
+
+
+            } else if (role === 'faculty') {
+                userName.textContent = 'Welcome, Dr. Smith!';
+                const navs = [
+                    { id: 'facultyDashboardBtn', text: 'Dashboard', view: 'facultyDashboardView' },
+                    { id: 'attendanceBtn', text: 'Records', view: 'attendanceView' },
+                    { id: 'editAttendanceBtn', text: 'Edit Attendance', view: 'editAttendanceView' }
+                ];
+                defaultViewId = 'facultyDashboardView';
+                createNavButtons(navs);
+                studentAttendanceView.classList.add('hidden');
+                facultyRecordsView.classList.remove('hidden');
+                initializeAttendanceEditor();
+
+            } else if (role.startsWith('admin')) {
+                let adminTitle = 'Admin';
+                if (role === 'admin_college') adminTitle = 'College Administrator';
+                if (role === 'admin_career') adminTitle = 'Career Counselor';
+                if (role === 'admin_education') adminTitle = 'Education Dept.';
+
+                userName.textContent = `Welcome, ${adminTitle}!`;
+                const navs = [
+                    { id: 'adminDashboardBtn', text: 'Dashboard', view: 'adminDashboardView' },
+                ];
+                defaultViewId = 'adminDashboardView';
+                createNavButtons(navs);
+                createAdminDashboard();
+                filterAdminTools(role);
+                initializeCourseManagement(); // Initialize course management for admin
+            }
+            if (defaultViewId) {
+                switchView(defaultViewId);
+            }
+        };
+        
+        const filterAdminTools = (role) => {
+            const allTools = {
+                manageUsersBtn: document.getElementById('manageUsersBtn'),
+                manageCoursesBtn: document.getElementById('manageCoursesBtn'),
+                careerCounselingBtn: document.getElementById('careerCounselingBtn'),
+                generateReportsBtn: document.getElementById('generateReportsBtn'),
+                systemSettingsBtn: document.getElementById('systemSettingsBtn')
+            };
+
+            Object.values(allTools).forEach(tool => {
+                if(tool) tool.style.display = 'none';
+            });
+
+            if (role === 'admin_college') {
+                allTools.manageUsersBtn.style.display = 'flex';
+                allTools.manageCoursesBtn.style.display = 'flex';
+                allTools.systemSettingsBtn.style.display = 'flex';
+                allTools.generateReportsBtn.style.display = 'flex';
+            } else if (role === 'admin_career') {
+                allTools.careerCounselingBtn.style.display = 'flex';
+            } else if (role === 'admin_education') {
+                allTools.generateReportsBtn.style.display = 'flex';
+            }
+        };
+
+        const createAdminDashboard = () => {
+            const ctx = document.getElementById('attendanceChart').getContext('2d');
+            if (attendanceChartInstance) {
+                attendanceChartInstance.destroy();
+            }
+            attendanceChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Computer Science', 'Mechanical', 'Electronics', 'Civil', 'Biotechnology'],
+                    datasets: [{
+                        label: 'Average Attendance %',
+                        data: [94, 88, 91, 85, 95],
+                        backgroundColor: 'rgba(102, 126, 234, 0.6)',
+                        borderColor: 'rgba(102, 126, 234, 1)',
+                        borderWidth: 1,
+                        borderRadius: 8,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: { y: { beginAtZero: true, max: 100 } },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        };
+
+        const createNavButtons = (navs) => {
+            const desktopMenu = document.getElementById('nav-menu-desktop');
+            const mobileMenu = document.getElementById('nav-menu-mobile');
+            desktopMenu.innerHTML = '';
+            
+            Array.from(mobileMenu.querySelectorAll('.nav-btn')).forEach(btn => btn.remove());
+
+            navs.forEach((nav, index) => {
+                const desktopButton = document.createElement('button');
+                desktopButton.id = nav.id;
+                desktopButton.textContent = nav.text;
+                desktopButton.className = 'nav-btn text-white font-semibold transition';
+                desktopButton.dataset.view = nav.view;
+                if (index === 0) {
+                    desktopButton.classList.add('opacity-100', 'border-b-2', 'border-white', 'pb-1');
+                } else {
+                    desktopButton.classList.add('opacity-75', 'hover:opacity-100');
+                }
+                desktopButton.addEventListener('click', () => switchView(nav.view));
+                desktopMenu.appendChild(desktopButton);
+
+                const mobileButton = document.createElement('a');
+                mobileButton.href = '#';
+                mobileButton.textContent = nav.text;
+                mobileButton.className = 'nav-btn block py-2 px-6 text-white font-semibold hover:bg-white/20 rounded';
+                mobileButton.dataset.view = nav.view;
+                 if (index === 0) {
+                    mobileButton.classList.add('bg-white/20');
+                }
+                mobileButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    switchView(nav.view);
+                    mobileMenu.classList.add('hidden');
+                });
+                mobileMenu.insertBefore(mobileButton, mobileMenu.querySelector('.px-6.pb-3'));
+            });
+        };
+
+        const switchView = (viewId) => {
+            allViews.forEach(v => v.classList.add('hidden'));
+            document.getElementById(viewId)?.classList.remove('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                const isActive = btn.dataset.view === viewId;
+                btn.classList.toggle('opacity-100', isActive && btn.parentElement.id === 'nav-menu-desktop');
+                btn.classList.toggle('border-b-2', isActive && btn.parentElement.id === 'nav-menu-desktop');
+                btn.classList.toggle('border-white', isActive && btn.parentElement.id === 'nav-menu-desktop');
+                btn.classList.toggle('pb-1', isActive && btn.parentElement.id === 'nav-menu-desktop');
+                btn.classList.toggle('opacity-75', !isActive && btn.parentElement.id === 'nav-menu-desktop');
+                btn.classList.toggle('bg-white/20', isActive && btn.parentElement.id === 'nav-menu-mobile');
+                btn.classList.toggle('hover:bg-white/20', !isActive && btn.parentElement.id === 'nav-menu-mobile');
+            });
+        };
+
+        const logout = () => {
+            currentUserRole = null;
+            app.classList.remove('flex');
+            app.classList.add('hidden');
+            loginScreen.classList.remove('hidden');
+        };
+
+        const generateCalendar = () => {
+            const calendarEl = document.getElementById('calendar');
+            if (!calendarEl) return;
+            calendarEl.innerHTML = '';
+            const today = new Date();
+            const month = today.getMonth();
+            const year = today.getFullYear();
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            for (let i = 0; i < firstDay; i++) {
+                calendarEl.appendChild(document.createElement('div'));
+            }
+
+            for (let i = 1; i <= daysInMonth; i++) {
+                const dayCell = document.createElement('div');
+                dayCell.className = 'p-2 h-24 border rounded-lg flex flex-col';
+                dayCell.textContent = i;
+
+                if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                    dayCell.classList.add('bg-blue-100', 'font-bold');
+                }
+                if (i === 15) {
+                    const eventEl = document.createElement('div');
+                    eventEl.className = 'text-xs bg-green-200 text-green-800 p-1 rounded mt-1 truncate';
+                    eventEl.textContent = 'Mid-term exam';
+                    dayCell.appendChild(eventEl);
+                }
+                if (i === 22) {
+                    const eventEl = document.createElement('div');
+                    eventEl.className = 'text-xs bg-purple-200 text-purple-800 p-1 rounded mt-1 truncate';
+                    eventEl.textContent = 'Project Deadline';
+                    dayCell.appendChild(eventEl);
+                }
+                calendarEl.appendChild(dayCell);
+            }
+        };
+        
+        const openUserModal = (mode = 'add', userType = 'student', userData = null) => {
+            const modalTitle = document.getElementById('userModalTitle');
+            const form = document.getElementById('userForm');
+            form.reset();
+
+            const userTypeCapitalized = userType.charAt(0).toUpperCase() + userType.slice(1);
+            modalTitle.textContent = `${mode === 'add' ? 'Add New' : 'Edit'} ${userTypeCapitalized}`;
+
+            if (mode === 'edit' && userData) {
+                document.getElementById('userNameInput').value = "Dummy Name";
+                document.getElementById('userIdInput').value = "DUMMY123";
+            }
+            modals.user.classList.add('show');
+        };
+
+        const initializeAttendanceEditor = () => {
+            const attendanceCheckboxes = document.querySelectorAll('.attendance-checkbox');
+
+            attendanceCheckboxes.forEach(checkbox => {
+                const statusText = checkbox.nextElementSibling;
+
+                const updateStatusText = () => {
+                    if (checkbox.checked) {
+                        statusText.textContent = 'Present';
+                        statusText.classList.remove('text-gray-500');
+                        statusText.classList.add('text-green-600');
+                    } else {
+                        statusText.textContent = 'Absent';
+                        statusText.classList.remove('text-green-600');
+                        statusText.classList.add('text-gray-500');
+                    }
+                };
+                
+                updateStatusText();
+                
+                checkbox.addEventListener('change', updateStatusText);
+            });
+            
+            document.getElementById('saveAttendanceChangesBtn')?.addEventListener('click', () => {
+                alert('Attendance changes saved! (Demo)');
+            });
+        };
+
+        // --- NEW: Course Management Functions ---
+        const initializeCourseManagement = () => {
+            const courseTabBtns = document.querySelectorAll('.course-tab-btn');
+            const courseLists = document.querySelectorAll('.course-list');
+            const addNewCourseBtnText = document.getElementById('addNewCourseBtnText');
+
+            const deptMap = {
+                cs: 'Computer Science',
+                mech: 'Mechanical',
+                biotech: 'Biotechnology'
+            };
+
+            courseTabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    courseTabBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const dept = btn.dataset.dept;
+                    activeCourseDept = dept;
+                    
+                    courseLists.forEach(list => list.classList.add('hidden'));
+                    document.getElementById(`${dept}CourseList`).classList.remove('hidden');
+                    
+                    addNewCourseBtnText.textContent = `Add ${deptMap[dept].split(' ')[0]} Course`;
+                });
+            });
+
+            document.getElementById('addNewCourseBtn')?.addEventListener('click', () => {
+                openCourseModal('add');
+            });
+
+            document.getElementById('closeCourseModal').addEventListener('click', () => modals.course.classList.remove('show'));
+            
+            document.getElementById('courseForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                modals.course.classList.remove('show');
+                alert('Course saved successfully! (Demo)');
+            });
+        };
+
+        const openCourseModal = (mode = 'add', courseData = null) => {
+            const modalTitle = document.getElementById('courseModalTitle');
+            const form = document.getElementById('courseForm');
+            const deptInput = document.getElementById('courseDeptInput');
+            form.reset();
+
+            const deptMap = { cs: 'Computer Science', mech: 'Mechanical', biotech: 'Biotechnology' };
+            deptInput.value = deptMap[activeCourseDept];
+
+            modalTitle.textContent = `${mode === 'add' ? 'Add New' : 'Edit'} Course`;
+            
+            if (mode === 'edit' && courseData) {
+                // Pre-fill form for editing
+            }
+            
+            modals.course.classList.add('show');
+        };
+
+        // --- Event Listeners ---
+        loginStudentBtn.addEventListener('click', () => setupUIForRole('student'));
+        loginFacultyBtn.addEventListener('click', () => setupUIForRole('faculty'));
+        loginAdminBtn.addEventListener('click', () => {
+            loginScreen.classList.add('hidden');
+            adminLoginScreen.classList.remove('hidden');
+            adminLoginScreen.classList.add('flex');
+        });
+        
+        adminRoleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const role = btn.dataset.adminRole;
+                setupUIForRole(role);
+            });
+        });
+
+        backToLoginBtn.addEventListener('click', () => {
+            adminLoginScreen.classList.add('hidden');
+            adminLoginScreen.classList.remove('flex');
+            loginScreen.classList.remove('hidden');
+        });
+
+        logoutBtn.addEventListener('click', logout);
+        document.getElementById('logoutBtnMobile').addEventListener('click', logout);
+
+        document.getElementById('markAttendanceBtn')?.addEventListener('click', () => modals.attendance.classList.add('show'));
+        document.getElementById('addEventBtn')?.addEventListener('click', () => modals.event.classList.add('show'));
+        document.getElementById('closeAttendanceModal').addEventListener('click', () => modals.attendance.classList.remove('show'));
+        document.getElementById('closeEventModal').addEventListener('click', () => modals.event.classList.remove('show'));
+        document.getElementById('saveEventBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            modals.event.classList.remove('show');
+        });
+
+        let qrcodeInstance = null;
+        document.getElementById('generateQRBtn')?.addEventListener('click', () => {
+            const classSelect = document.getElementById('classSelect');
+            const selectedClass = classSelect.options[classSelect.selectedIndex].text;
+            const qrCodeContainer = document.getElementById('qrcode');
+            const qrClassInfo = document.getElementById('qrClassInfo');
+
+            qrCodeContainer.innerHTML = '';
+            qrClassInfo.textContent = selectedClass;
+
+            const qrData = {
+                class: selectedClass,
+                timestamp: new Date().toISOString(),
+                validUntil: new Date(Date.now() + 60000).toISOString()
+            };
+
+            qrcodeInstance = new QRCode(qrCodeContainer, {
+                text: JSON.stringify(qrData),
+                width: 256,
+                height: 256,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+
+            modals.qrCode.classList.add('show');
+        });
+
+        document.getElementById('closeQRModal')?.addEventListener('click', () => {
+            modals.qrCode.classList.remove('show');
+        });
+
+        const tabBtns = modals.attendance.querySelectorAll('.tab-btn');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                modals.attendance.querySelectorAll('[id^="tab-content-"]').forEach(content => content.classList.add('hidden'));
+                document.getElementById(`tab-content-${btn.dataset.tab}`).classList.remove('hidden');
+
+                const statusText = document.getElementById('attendanceStatus');
+                if (btn.dataset.tab === 'qr') {
+                    statusText.innerHTML = `Scan QR for <span class="font-bold">AI & ML</span>.`;
+                } else if (btn.dataset.tab === 'proximity') {
+                    statusText.innerHTML = `Searching for class via Bluetooth....`;
+                } 
+            });
+        });
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('nav-menu-mobile');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.getElementById('manageUsersBtn')?.addEventListener('click', () => switchView('manageUsersView'));
+        document.getElementById('manageCoursesBtn')?.addEventListener('click', () => switchView('manageCoursesView'));
+
+        const studentTabBtn = document.getElementById('studentTabBtn');
+        const facultyTabBtn = document.getElementById('facultyTabBtn');
+        const studentUserList = document.getElementById('studentUserList');
+        const facultyUserList = document.getElementById('facultyUserList');
+        const addNewUserBtnText = document.getElementById('addNewUserBtnText');
+
+        studentTabBtn?.addEventListener('click', () => {
+            studentTabBtn.classList.add('active');
+            facultyTabBtn.classList.remove('active');
+            studentUserList.classList.remove('hidden');
+            facultyUserList.classList.add('hidden');
+            addNewUserBtnText.textContent = "Add New Student";
+            activeUserManagementTab = 'student';
+        });
+
+        facultyTabBtn?.addEventListener('click', () => {
+            facultyTabBtn.classList.add('active');
+            studentTabBtn.classList.remove('active');
+            facultyUserList.classList.remove('hidden');
+            studentUserList.classList.add('hidden');
+            addNewUserBtnText.textContent = "Add New Faculty";
+            activeUserManagementTab = 'faculty';
+        });
+        
+        document.getElementById('addNewUserBtn')?.addEventListener('click', () => {
+            openUserModal('add', activeUserManagementTab);
+        });
+
+        document.getElementById('closeUserModal').addEventListener('click', () => modals.user.classList.remove('show'));
+        
+        document.getElementById('userForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            modals.user.classList.remove('show');
+            alert('User saved successfully! (Demo)');
+        });
+
+
+        generateCalendar(); // Initial call
+    });
+    </script>
+</body>
+</html>
