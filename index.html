@@ -91,6 +91,246 @@
         </div>
     </div>
 
+    <div id="studentLoginScreen" class="min-h-screen flex items-center justify-center bg-gray-100 fade-in hidden">
+        <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-xl relative">
+            <button id="backToRoleSelectionBtn_student"
+                class="absolute top-4 left-4 text-gray-500 hover:text-gray-800 transition">
+                <i class="fas fa-arrow-left mr-2"></i>Back
+            </button>
+            <div class="text-center">
+                <i class="fas fa-user-graduate text-5xl text-purple-600"></i>
+                <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
+                    Student Portal
+                </h2>
+                <p class="mt-2 text-sm text-gray-600">
+                    Please sign in to your account
+                </p>
+            </div>
+            <form class="space-y-6" action="#" method="POST">
+                <div>
+                    <label for="student-email" class="sr-only">Email address</label>
+                    <input id="student-email" name="email" type="email" autocomplete="email" required
+                        class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm"
+                        placeholder="Email address">
+                </div>
+                <div>
+                    <label for="student-password" class="sr-only">Password</label>
+                    <input id="student-password" name="password" type="password" autocomplete="current-password"
+                        required
+                        class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm"
+                        placeholder="Password">
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="student-remember-me" name="remember-me" type="checkbox"
+                            class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
+                        <label for="student-remember-me" class="ml-2 block text-sm text-gray-900">
+                            Remember me
+                        </label>
+                    </div>
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-purple-600 hover:text-purple-500">
+                            Forgot your password?
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <button id="studentLoginSubmitBtn" type="button"
+                        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white gradient-bg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                        Sign in
+                    </button>
+                </div>
+            </form>
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-white text-gray-500">
+                        Or continue with
+                    </span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 gap-3">
+                <button type="button"
+                    class="w-full inline-flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <i class="fab fa-google mr-2 text-lg"></i> Sign in with Google
+                </button>
+                <button type="button"
+                    class="w-full inline-flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <i class="fas fa-phone-alt mr-2 text-lg"></i> Sign in with Phone
+                </button>
+            </div>
+            <div class="text-sm text-center">
+                <p class="text-gray-600">Don't have an account?
+                    <a href="#" class="font-medium text-purple-600 hover:text-purple-500">
+                        Sign up manually
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="facultyLoginScreen" class="min-h-screen flex items-center justify-center bg-gray-100 fade-in hidden">
+        <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-xl relative">
+            <button id="backToRoleSelectionBtn_faculty"
+                class="absolute top-4 left-4 text-gray-500 hover:text-gray-800 transition">
+                <i class="fas fa-arrow-left mr-2"></i>Back
+            </button>
+            <div class="text-center">
+                <i class="fas fa-chalkboard-teacher text-5xl text-purple-600"></i>
+                <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
+                    Faculty Portal
+                </h2>
+                <p class="mt-2 text-sm text-gray-600">
+                    Please sign in to your account
+                </p>
+            </div>
+            <form class="space-y-6" action="#" method="POST">
+                <div>
+                    <label for="faculty-email" class="sr-only">Email address</label>
+                    <input id="faculty-email" name="email" type="email" autocomplete="email" required
+                        class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm"
+                        placeholder="Email address">
+                </div>
+                <div>
+                    <label for="faculty-password" class="sr-only">Password</label>
+                    <input id="faculty-password" name="password" type="password" autocomplete="current-password"
+                        required
+                        class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm"
+                        placeholder="Password">
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="faculty-remember-me" name="remember-me" type="checkbox"
+                            class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
+                        <label for="faculty-remember-me" class="ml-2 block text-sm text-gray-900">
+                            Remember me
+                        </label>
+                    </div>
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-purple-600 hover:text-purple-500">
+                            Forgot your password?
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <button id="facultyLoginSubmitBtn" type="button"
+                        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white gradient-bg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                        Sign in
+                    </button>
+                </div>
+            </form>
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-white text-gray-500">
+                        Or continue with
+                    </span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 gap-3">
+                <button type="button"
+                    class="w-full inline-flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <i class="fab fa-google mr-2 text-lg"></i> Sign in with Google
+                </button>
+                <button type="button"
+                    class="w-full inline-flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <i class="fas fa-phone-alt mr-2 text-lg"></i> Sign in with Phone
+                </button>
+            </div>
+            <div class="text-sm text-center">
+                <p class="text-gray-600">Don't have an account?
+                    <a href="#" class="font-medium text-purple-600 hover:text-purple-500">
+                        Sign up manually
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="adminLoginScreen" class="min-h-screen flex items-center justify-center bg-gray-100 fade-in hidden">
+        <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-xl relative">
+            <button id="backToRoleSelectionBtn_admin"
+                class="absolute top-4 left-4 text-gray-500 hover:text-gray-800 transition">
+                <i class="fas fa-arrow-left mr-2"></i>Back
+            </button>
+            <div class="text-center">
+                <i class="fas fa-user-shield text-5xl text-purple-600"></i>
+                <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
+                    Administrator Portal
+                </h2>
+                <p class="mt-2 text-sm text-gray-600">
+                    Please sign in to your account
+                </p>
+            </div>
+            <form class="space-y-6" action="#" method="POST">
+                <div>
+                    <label for="admin-email" class="sr-only">Email address</label>
+                    <input id="admin-email" name="email" type="email" autocomplete="email" required
+                        class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm"
+                        placeholder="Email address">
+                </div>
+                <div>
+                    <label for="admin-password" class="sr-only">Password</label>
+                    <input id="admin-password" name="password" type="password" autocomplete="current-password" required
+                        class="appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-purple-500 focus:border-purple-500 focus:z-10 sm:text-sm"
+                        placeholder="Password">
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox"
+                            class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+                            Remember me
+                        </label>
+                    </div>
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-purple-600 hover:text-purple-500">
+                            Forgot your password?
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <button id="adminLoginSubmitBtn" type="button"
+                        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white gradient-bg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                        Sign in
+                    </button>
+                </div>
+            </form>
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-white text-gray-500">
+                        Or continue with
+                    </span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 gap-3">
+                <button type="button"
+                    class="w-full inline-flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <i class="fab fa-google mr-2 text-lg"></i> Sign in with Google
+                </button>
+                <button type="button"
+                    class="w-full inline-flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                    <i class="fas fa-phone-alt mr-2 text-lg"></i> Sign in with Phone
+                </button>
+            </div>
+            <div class="text-sm text-center">
+                <p class="text-gray-600">Don't have an account?
+                    <a href="#" class="font-medium text-purple-600 hover:text-purple-500">
+                        Sign up manually
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
     <div id="app" class="min-h-screen flex-col hidden">
         <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -823,12 +1063,14 @@
                             readonly>
                     </div>
                     <div>
-                        <label for="courseNameInput" class="block text-sm font-medium text-gray-700">Course Name</label>
+                        <label for="courseNameInput" class="block text-sm font-medium text-gray-700">Course
+                            Name</label>
                         <input type="text" id="courseNameInput" placeholder="e.g., Intro to Programming"
                             class="mt-1 w-full p-3 border rounded-lg">
                     </div>
                     <div>
-                        <label for="courseCodeInput" class="block text-sm font-medium text-gray-700">Course Code</label>
+                        <label for="courseCodeInput" class="block text-sm font-medium text-gray-700">Course
+                            Code</label>
                         <input type="text" id="courseCodeInput" placeholder="e.g., CS101"
                             class="mt-1 w-full p-3 border rounded-lg">
                     </div>
@@ -853,11 +1095,26 @@
         document.addEventListener('DOMContentLoaded', () => {
             // --- Elements ---
             const loginScreen = document.getElementById('loginScreen');
-            // adminLoginScreen removed as it's no longer used
+            const studentLoginScreen = document.getElementById('studentLoginScreen');
+            const facultyLoginScreen = document.getElementById('facultyLoginScreen');
+            const adminLoginScreen = document.getElementById('adminLoginScreen');
             const app = document.getElementById('app');
+
+            // Role selection buttons
             const loginStudentBtn = document.getElementById('loginStudent');
             const loginFacultyBtn = document.getElementById('loginFaculty');
-            const loginCollegeAdminBtn = document.getElementById('loginCollegeAdmin'); // New button element
+            const loginCollegeAdminBtn = document.getElementById('loginCollegeAdmin');
+
+            // Login form submission buttons
+            const studentLoginSubmitBtn = document.getElementById('studentLoginSubmitBtn');
+            const facultyLoginSubmitBtn = document.getElementById('facultyLoginSubmitBtn');
+            const adminLoginSubmitBtn = document.getElementById('adminLoginSubmitBtn');
+
+            // Back buttons for login forms
+            const backToRoleSelectionBtn_student = document.getElementById('backToRoleSelectionBtn_student');
+            const backToRoleSelectionBtn_faculty = document.getElementById('backToRoleSelectionBtn_faculty');
+            const backToRoleSelectionBtn_admin = document.getElementById('backToRoleSelectionBtn_admin');
+
             const logoutBtn = document.getElementById('logoutBtn');
             const userName = document.getElementById('userName');
 
@@ -880,6 +1137,9 @@
             const setupUIForRole = (role) => {
                 currentUserRole = role;
                 loginScreen.classList.add('hidden');
+                studentLoginScreen.classList.add('hidden');
+                facultyLoginScreen.classList.add('hidden');
+                adminLoginScreen.classList.add('hidden');
                 app.classList.add('flex');
                 app.classList.remove('hidden');
 
@@ -899,8 +1159,6 @@
                     createNavButtons(navs);
                     studentAttendanceView.classList.remove('hidden');
                     facultyRecordsView.classList.add('hidden');
-
-
                 } else if (role === 'faculty') {
                     userName.textContent = 'Welcome, Dr. Smith!';
                     const navs = [
@@ -913,11 +1171,9 @@
                     studentAttendanceView.classList.add('hidden');
                     facultyRecordsView.classList.remove('hidden');
                     initializeAttendanceEditor();
-
                 } else if (role.startsWith('admin')) {
                     let adminTitle = 'Admin';
                     if (role === 'admin_college') adminTitle = 'College Administrator';
-                    // Other admin roles can be added here if needed
 
                     userName.textContent = `Welcome, ${adminTitle}!`;
                     const navs = [
@@ -1127,7 +1383,6 @@
                 });
             };
 
-            // --- NEW: Course Management Functions ---
             const initializeCourseManagement = () => {
                 const courseTabBtns = document.querySelectorAll('.course-tab-btn');
                 const courseLists = document.querySelectorAll('.course-list');
@@ -1186,11 +1441,51 @@
             };
 
             // --- Event Listeners ---
-            loginStudentBtn.addEventListener('click', () => setupUIForRole('student'));
-            loginFacultyBtn.addEventListener('click', () => setupUIForRole('faculty'));
-            loginCollegeAdminBtn.addEventListener('click', () => setupUIForRole('admin_college')); // New event listener
 
-            // Old admin button listeners removed
+            // Show appropriate login screen from role selection
+            loginStudentBtn.addEventListener('click', () => {
+                loginScreen.classList.add('hidden');
+                studentLoginScreen.classList.remove('hidden');
+            });
+
+            loginFacultyBtn.addEventListener('click', () => {
+                loginScreen.classList.add('hidden');
+                facultyLoginScreen.classList.remove('hidden');
+            });
+
+            loginCollegeAdminBtn.addEventListener('click', () => {
+                loginScreen.classList.add('hidden');
+                adminLoginScreen.classList.remove('hidden');
+            });
+
+            // Handle login submissions
+            studentLoginSubmitBtn.addEventListener('click', () => {
+                studentLoginScreen.classList.add('hidden');
+                setupUIForRole('student');
+            });
+
+            facultyLoginSubmitBtn.addEventListener('click', () => {
+                facultyLoginScreen.classList.add('hidden');
+                setupUIForRole('faculty');
+            });
+
+            adminLoginSubmitBtn.addEventListener('click', () => {
+                adminLoginScreen.classList.add('hidden');
+                setupUIForRole('admin_college');
+            });
+
+            // Handle back buttons
+            const goBackToRoleSelection = () => {
+                studentLoginScreen.classList.add('hidden');
+                facultyLoginScreen.classList.add('hidden');
+                adminLoginScreen.classList.add('hidden');
+                loginScreen.classList.remove('hidden');
+            };
+
+            backToRoleSelectionBtn_student.addEventListener('click', goBackToRoleSelection);
+            backToRoleSelectionBtn_faculty.addEventListener('click', goBackToRoleSelection);
+            backToRoleSelectionBtn_admin.addEventListener('click', goBackToRoleSelection);
+
 
             logoutBtn.addEventListener('click', logout);
             document.getElementById('logoutBtnMobile').addEventListener('click', logout);
